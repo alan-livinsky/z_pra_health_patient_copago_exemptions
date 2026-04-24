@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<data>
+    <xpath expr="/form/group[@id='patient_crit_markers']" position="after">
+        <group id="health_patient_copago_exemption"
+            string="Exenciones de copago"
+            groups="z_pra_health_patient_copago_exemptions.z_gestor_exepciones"
+            colspan="4" col="12">
+            <label name="copago_exempt_pregnant"/>
+            <field name="copago_exempt_pregnant"/>
+            <label name="copago_exempt_disabled"/>
+            <field name="copago_exempt_disabled"/>
+            <label name="copago_exempt_oncology"/>
+            <field name="copago_exempt_oncology"/>
+            <label name="copago_exempt_gynecology"/>
+            <field name="copago_exempt_gynecology"/>
+            <label name="copago_exempt_under_one_year"/>
+            <field name="copago_exempt_under_one_year"/>
+            <label name="copago_exempt_recent_surgery"/>
+            <field name="copago_exempt_recent_surgery"/>
+        </group>
+        <newline/>
+    </xpath>
+</data>

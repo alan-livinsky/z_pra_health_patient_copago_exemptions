@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+        <record model="ir.ui.view" id="view_patient_form_health_patient_copago_exemption">
+            <field name="model">gnuhealth.patient</field>
+            <field name="inherit" ref="health.gnuhealth_patient_view_form"/>
+            <field name="name">gnuhealth_patient_form_health_patient_copago_exemption</field>
+        </record>
+
+    </data>
+</tryton>

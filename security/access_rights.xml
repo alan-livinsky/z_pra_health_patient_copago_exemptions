@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+        <record model="res.group" id="z_gestor_exepciones">
+            <field name="name">z_gestor_exepciones</field>
+        </record>
+
+    </data>
+</tryton>
