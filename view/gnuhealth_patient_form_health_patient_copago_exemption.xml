@@ -2,8 +2,11 @@
 
 <data>
     <xpath expr="/form/group[@id='patient_crit_markers']" position="after">
+        <field name="can_manage_copago_exemptions"
+            states="{'invisible': True}"/>
         <group id="health_patient_copago_exemption"
             string="Exenciones de copago"
+            states="{'invisible': ~Eval('can_manage_copago_exemptions')}"
             colspan="4" col="12">
             <label name="copago_exempt_pregnant"/>
             <field name="copago_exempt_pregnant"/>
