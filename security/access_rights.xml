@@ -6,5 +6,89 @@
             <field name="name">z_gestor_exepciones</field>
         </record>
 
+        <record model="ir.model.field.access" id="access_copago_exempt_pregnant">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_pregnant')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_copago_exempt_pregnant_z_gestor_exepciones">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_pregnant')]"/>
+            <field name="group" ref="z_gestor_exepciones"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" id="access_copago_exempt_disabled">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_disabled')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_copago_exempt_disabled_z_gestor_exepciones">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_disabled')]"/>
+            <field name="group" ref="z_gestor_exepciones"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" id="access_copago_exempt_oncology">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_oncology')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_copago_exempt_oncology_z_gestor_exepciones">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_oncology')]"/>
+            <field name="group" ref="z_gestor_exepciones"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" id="access_copago_exempt_gynecology">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_gynecology')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_copago_exempt_gynecology_z_gestor_exepciones">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_gynecology')]"/>
+            <field name="group" ref="z_gestor_exepciones"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" id="access_copago_exempt_under_one_year">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_under_one_year')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_copago_exempt_under_one_year_z_gestor_exepciones">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_under_one_year')]"/>
+            <field name="group" ref="z_gestor_exepciones"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" id="access_copago_exempt_recent_surgery">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_recent_surgery')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_copago_exempt_recent_surgery_z_gestor_exepciones">
+            <field name="field"
+                search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'copago_exempt_recent_surgery')]"/>
+            <field name="group" ref="z_gestor_exepciones"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
     </data>
 </tryton>
