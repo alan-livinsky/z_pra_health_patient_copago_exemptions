@@ -9,5 +9,5 @@ class Patient(metaclass=PoolMeta):
     copago_exempt_disabled = fields.Boolean('Persona discapacitada')
     copago_exempt_oncology = fields.Boolean('Paciente oncologico')
     copago_exempt_gynecology = fields.Boolean('Paciente ginecologico')
-    copago_exempt_under_one_year = fields.Boolean('Menor a un ano')
+    copago_exempt_under_one_year = fields.Boolean('Menor a un año')
     copago_exempt_recent_surgery = fields.Boolean('Cirugia reciente')
