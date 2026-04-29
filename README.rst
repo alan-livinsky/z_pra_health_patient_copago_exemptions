@@ -29,7 +29,7 @@ Campos agregados
 +--------------------------------+------------------------------+
 | ``copago_exempt_under_one_year`` | Menor a un año             |
 +--------------------------------+------------------------------+
-| ``copago_exempt_recent_surgery`` | Cirugía reciente           |
+| ``copago_exempt_recent_surgery`` | Transplante reciente       |
 +--------------------------------+------------------------------+
 
 Control de acceso

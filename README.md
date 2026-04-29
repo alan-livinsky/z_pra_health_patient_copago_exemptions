@@ -21,7 +21,7 @@ Los campos se muestran en una sección dedicada **"Exenciones de copago"** dentr
 | `copago_exempt_oncology` | Paciente oncológico |
 | `copago_exempt_gynecology` | Paciente ginecológico |
 | `copago_exempt_under_one_year` | Menor a un año |
-| `copago_exempt_recent_surgery` | Cirugía reciente |
+| `copago_exempt_recent_surgery` | Transplante reciente |
 
 Todos los campos son de tipo booleano (casilla de verificación). Un valor marcado indica que el paciente aplica para esa exención.
 
