@@ -1,61 +1,49 @@
 #!/usr/bin/env python
 
-from setuptools import setup
 import configparser
-import os
-import re
+from pathlib import Path
+
+from setuptools import setup
 
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname),
-                encoding='utf-8').read()
-
+MODULE_NAME = 'z_001_copago_exemptions'
+PACKAGE_ROOT = f'trytond.modules.{MODULE_NAME}'
+BASE_DIR = Path(__file__).parent
 
 config = configparser.ConfigParser()
-config.read_file(open('tryton.cfg'))
-info = dict(config.items('tryton'))
-
-for key in ('depends', 'extras_depend', 'xml'):
-    if key in info:
-        info[key] = info[key].strip().splitlines()
-major_version, minor_version = 6, 0
-
-requires = []
-for dep in info.get('depends', []):
-    if dep == 'health':
-        requires.append('gnuhealth == %s' % info.get('version'))
-    elif dep.startswith('health_'):
-        health_package = dep.split('_', 1)[1]
-        requires.append(
-            'gnuhealth_%s == %s' % (health_package, info.get('version')))
-    else:
-        if not re.match(r'(ir|res|webdav)(\W|$)', dep):
-            requires.append(
-                'trytond_%s >= %s.%s, < %s.%s' % (
-                    dep, major_version, minor_version,
-                    major_version, minor_version + 1))
+config.read(BASE_DIR / 'tryton.cfg', encoding='utf-8')
+version = config.get('tryton', 'version', fallback='0.0.1')
 
 setup(
-    name='gnuhealth_z_pra_health_patient_copago_exemptions',
-    version=info.get('version', '0.0.1'),
+    name=f'gnuhealth_{MODULE_NAME}',
+    version=version,
     description='GNU Health copago exemption markers on patient records',
-    long_description=read('README.rst'),
+    long_description=(BASE_DIR / 'README.rst').read_text(encoding='utf-8'),
+    long_description_content_type='text/x-rst',
     author='OpenAI',
     author_email='support@openai.com',
     url='https://www.gnuhealth.org',
-    package_dir={'trytond.modules.z_pra_health_patient_copago_exemptions': '.'},
+    package_dir={PACKAGE_ROOT: '.'},
     packages=[
-        'trytond.modules.z_pra_health_patient_copago_exemptions',
+        PACKAGE_ROOT,
     ],
     package_data={
-        'trytond.modules.z_pra_health_patient_copago_exemptions': info.get('xml', [])
-        + ['tryton.cfg', 'security/*.xml', 'view/*.xml'],
+        PACKAGE_ROOT: [
+            'tryton.cfg',
+            'security/*.xml',
+            'view/*.xml',
+            '*.xml',
+        ],
     },
+    include_package_data=True,
     license='GPL-3',
-    install_requires=requires,
+    install_requires=[
+        f'gnuhealth == {version}',
+    ],
     zip_safe=False,
-    entry_points="""
-    [trytond.modules]
-    z_pra_health_patient_copago_exemptions = trytond.modules.z_pra_health_patient_copago_exemptions
-    """,
+    entry_points={
+        'trytond.modules': [
+            f'{MODULE_NAME} = {PACKAGE_ROOT}',
+        ],
+    },
 )
